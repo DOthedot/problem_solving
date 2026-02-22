@@ -101,6 +101,6 @@ class elevator_controller :
 		return self.elevators[eid].state
 
 	def get_elevator_direction(self,eid: int) -> direction:
-		ß
+		return self.elevators[eid].direction
 
 
