@@ -1,4 +1,4 @@
-# reverse polish notation , time complexity o(N) 
+# reverse polish notation , time complexity o(N) and O(1) time complexity
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
