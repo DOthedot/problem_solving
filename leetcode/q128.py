@@ -1,30 +1,17 @@
-# we have to find out, the maximum length of longest subsequence 
+# length of longest consecutive subsequence in o(N) time complexity 
+ class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        num_set = set(nums)
+        longest = 0
 
-from typing import List 
+        for n in nums : 
+            if (n-1) not in num_set:
+                length = 0
+                while (n+length) in num_set:
+                    length += 1 
+                longest = max(longest, length)
+        
+        return longest
 
-def longest_consecutive(array: List[int]) -> int:
-    # checking for anmolies in the array 
-    if len(array) <= 1 : 
-        return array
 
-
-    # sorting the array inplace 
-    array.sort() 
-  
-    max_length = 0 
-    count = 1 
-    current_value = array[0] # to initialise the first value 
-
-    #using the loop to calculate the maximum array 
-    for value in array[1:] :
-        if value != current_value + 1 : 
-            current_value = value  
-            count = 0 
-        else:
-            count += 1 
-            current_value = value 
-        max_length = max(max_length , count)
-
-    return max_length  
-
-print(longest_consecutive([0,3,7,2,5,8,4,6,0,1]))
+              
