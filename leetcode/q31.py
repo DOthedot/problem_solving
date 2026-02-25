@@ -21,7 +21,7 @@ class solution:
 
         # then we have to swap the element with the just larger elemnt in the remaining array after the 
         # break point 
-        for index in range(len(array)-1, index, -1):
+        for index in range(len(array)-1, -1 , -1):
             if array[index] > array[break_index] : 
                 #swapping the values 
                 array[index] , array[break_index] = array[break_index] , array[index]
